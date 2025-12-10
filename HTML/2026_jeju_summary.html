@@ -13,86 +13,124 @@
             background-color: #f4f7f6; /* 淺灰色背景 */
             color: #333;
         }
+
+        /* 頂部 Header 樣式 */
         .header {
-            padding: 20px 50px;
-            border-bottom: 1px solid #ddd;
+            padding: 30px 50px 20px 50px;
             background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
         }
-        .header h1 {
-            color: #ff5722; /* 類似圖片中的橘色 */
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* 標題和導覽列分開 */
+            align-items: center;
+        }
+        .header-left h1 {
+            color: #ff5722; /* 橘色主色調 */
             margin-bottom: 5px;
+            font-size: 1.8em;
         }
-        .header nav a {
+        .header-left p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* 導覽列樣式 (和截圖一樣靠右) */
+        .nav-links a {
             text-decoration: none;
             color: #333;
             margin-left: 20px;
+            padding: 5px 0;
             font-weight: bold;
+            transition: color 0.3s;
         }
-        .header nav .current {
+        .nav-links .current {
             color: #ff5722;
             border-bottom: 2px solid #ff5722;
-            padding-bottom: 2px;
         }
 
-        /* 內容容器和標題 */
+        /* 內容區塊 */
         .content {
             padding: 40px 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
+
+        /* 行程總覽標題 */
         .section-title {
             color: #ff5722;
             border-left: 5px solid #ff5722;
             padding-left: 15px;
             font-size: 2em;
             margin-bottom: 30px;
+            font-weight: 500;
         }
         
-        /* 卡片佈局 (Flexbox) */
+        /* 卡片佈局 (Flexbox - 實現左右等高並排) */
         .card-container {
             display: flex;
-            gap: 30px; /* 卡片間距 */
-            flex-wrap: wrap; /* 響應式佈局 */
+            gap: 30px; 
+            flex-wrap: wrap;
+            align-items: stretch; /* 確保所有卡片等高 */
         }
         .card {
             background-color: #fff;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 輕微陰影 */
-            flex: 1 1 45%; /* 允許卡片在寬度上靈活調整，但最小佔 45% */
-            min-width: 300px; /* 確保在小螢幕上不會擠壓太小 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 略重的陰影，更有浮動感 */
+            flex: 1; /* 平均分配寬度 */
+            min-width: 350px; 
         }
         
         /* 卡片內容樣式 */
         .card h3 {
             color: #4a4a4a;
             font-size: 1.5em;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
+        /* 列表樣式 */
         .card ul {
             list-style: none;
             padding: 0;
         }
         .card li {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-        .card li strong {
-            display: block;
-            color: #007bff; /* 藍色標記 */
+        
+        /* 項目標題 (例如：航班資訊) */
+        .item-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
             font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        /* 項目內容 */
+        .item-content {
+            color: #666;
+            padding-left: 25px; /* 與標題圖示對齊 */
         }
 
         /* 響應式調整 */
         @media (max-width: 768px) {
             .card-container {
-                flex-direction: column; /* 垂直堆疊卡片 */
+                flex-direction: column; 
             }
-            .header, .content {
+            .header-content, .content {
                 padding: 15px 20px;
+            }
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                margin-top: 15px;
             }
         }
     </style>
@@ -100,60 +138,73 @@
 <body>
     
     <header class="header">
-        <h1>Jan, 2026 Jeju</h1>
-        <p>1/10~15</p>
-        <nav>
-            <a href="#" class="current">Summary</a>
-            <a href="2026_jeju_day1.html">Day 1</a>
-            <a href="2026_jeju_day2.html">Day 2</a>
-            <a href="2026_jeju_day3.html">Day 3</a>
-            <a href="2026_jeju_day4.html">Day 4</a>
-            <a href="2026_jeju_day5.html">Day 5</a>
-        </nav>
+        <div class="header-content">
+            <div class="header-left">
+                <h1>Jan, 2026 Jeju</h1>
+                <p>1/10 ~ 15</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="current">Summary</a>
+                <a href="2026_jeju_day1.html">Day 1</a>
+                <a href="2026_jeju_day2.html">Day 2</a>
+                <a href="2026_jeju_day3.html">Day 3</a>
+                <a href="2026_jeju_day4.html">Day 4</a>
+                <a href="2026_jeju_day5.html">Day 5</a>
+            </nav>
+        </div>
     </header>
 
     <div class="content">
-        <h2 class="section-title">Summary</h2>
+        <h2 class="section-title">行程總覽</h2>
 
         <div class="card-container">
             <div class="card">
                 <h3>重要資訊</h3>
                 <ul>
                     <li>
-                        <strong>✈️ 航班資訊</strong>
-                        <p> KHH ⇌ OKA<br>1/10 出發: : - <br>1/15 返程: : - :</p>
+                        <div class="item-title">✈️ 航班資訊</div>
+                        <div class="item-content">
+                            KHH ⇌ CJU<br>
+                            1/10 出發: -<br>
+                            1/15 返程: -
+                        </div>
                     </li>
                     <li>
-                        <strong>🚗 租車資訊</strong>
-                        <p>XXX租車 (文字已預訂)<br>1/11 : ~ 1/14 :</p>
+                        <div class="item-title">🚗 租車資訊</div>
+                        <div class="item-content">
+                            XXX 租車 <br>
+                            1/11 ~ 1/14
+                        </div>
                     </li>
-                    <!--
-                    <li>
-                        <strong>👥 同行旅伴 (10人)</strong>
-                        <p>行李託運: 冠圓、章智、...等</p>
-                    </li>
-                    -->
-                </ul>
+                    </ul>
             </div>
 
             <div class="card">
                 <h3>行程概覽</h3>
                 <ul>
                     <li>
-                        <strong>🌴 1/10 A</strong>
-                        <p>落地</p>
+                        <div class="item-title">🌴 1/10 A</div>
+                        <div class="item-content">落地</div>
                     </li>
                     <li>
-                        <strong>👍 1/11 B</strong>
-                        <p>BB</p>
+                        <div class="item-title">👍 1/11 B</div>
+                        <div class="item-content">BB</div>
                     </li>
                     <li>
-                        <strong>🛍️ 1/12 C</strong>
-                        <p>CC</p>
+                        <div class="item-title">🌊 1/12 C</div>
+                        <div class="item-content">C</div>
                     </li>
                     <li>
-                        <strong>🛒 1/13 D</strong>
-                        <p>DD</p>
+                        <div class="item-title"> 1/13 D</div>
+                        <div class="item-content">D</div>
+                    </li>
+                    <li>
+                        <div class="item-title"> 1/14 E</div>
+                        <div class="item-content">E</div>
+                    </li>
+                    <li>
+                        <div class="item-title"> 1/15 F</div>
+                        <div class="item-content">F</div>
                     </li>
                 </ul>
             </div>

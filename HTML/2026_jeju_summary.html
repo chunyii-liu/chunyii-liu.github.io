@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026.1.10-15 Jeju - 總覽</title>
+    <style>
+        /* 基礎樣式 */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* 淺灰色背景 */
+            color: #333;
+        }
+        .header {
+            padding: 20px 50px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .header h1 {
+            color: #ff5722; /* 類似圖片中的橘色 */
+            margin-bottom: 5px;
+        }
+        .header nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .header nav .current {
+            color: #ff5722;
+            border-bottom: 2px solid #ff5722;
+            padding-bottom: 2px;
+        }
+
+        /* 內容容器和標題 */
+        .content {
+            padding: 40px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            color: #ff5722;
+            border-left: 5px solid #ff5722;
+            padding-left: 15px;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        /* 卡片佈局 (Flexbox) */
+        .card-container {
+            display: flex;
+            gap: 30px; /* 卡片間距 */
+            flex-wrap: wrap; /* 響應式佈局 */
+        }
+        .card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 輕微陰影 */
+            flex: 1 1 45%; /* 允許卡片在寬度上靈活調整，但最小佔 45% */
+            min-width: 300px; /* 確保在小螢幕上不會擠壓太小 */
+        }
+        
+        /* 卡片內容樣式 */
+        .card h3 {
+            color: #4a4a4a;
+            font-size: 1.5em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .card li strong {
+            display: block;
+            color: #007bff; /* 藍色標記 */
+            font-size: 1.1em;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column; /* 垂直堆疊卡片 */
+            }
+            .header, .content {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <h1>Jan, 2026 Jeju</h1>
+        <p>1/10~15</p>
+        <nav>
+            <a href="#" class="current">Summary</a>
+            <a href="my_okinawa_trip_day1.html">Day 1</a>
+            <a href="my_okinawa_trip_day2.html">Day 2</a>
+            </nav>
+    </header>
+
+    <div class="content">
+        <h2 class="section-title">Summary</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>重要資訊</h3>
+                <ul>
+                    <li>
+                        <strong>✈️ 航班資訊</strong>
+                        <p> KHH ⇌ OKA<br>1/10 出發: : - <br>1/15 返程: : - :</p>
+                    </li>
+                    <li>
+                        <strong>🚗 租車資訊</strong>
+                        <p>XXX租車 (文字已預訂)<br>1/11 : ~ 1/14 :</p>
+                    </li>
+                    <!--
+                    <li>
+                        <strong>👥 同行旅伴 (10人)</strong>
+                        <p>行李託運: 冠圓、章智、...等</p>
+                    </li>
+                    -->
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>行程概覽</h3>
+                <ul>
+                    <li>
+                        <strong>🌴 1/10 A</strong>
+                        <p>落地</p>
+                    </li>
+                    <li>
+                        <strong>👍 1/11 B</strong>
+                        <p>BB</p>
+                    </li>
+                    <li>
+                        <strong>🛍️ 1/12 C</strong>
+                        <p>CC</p>
+                    </li>
+                    <li>
+                        <strong>🛒 1/13 D</strong>
+                        <p>DD</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
